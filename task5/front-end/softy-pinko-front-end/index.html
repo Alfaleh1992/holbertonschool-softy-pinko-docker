@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Softy Pinko Front-end</title>
+</head><body>
+<h1>Softy Pinko</h1>
+<div id="dynamic-content">Loading…</div>
+<script>
+fetch('/api/hello')
+  .then(r=>r.text())
+  .then(t=>{document.getElementById('dynamic-content').textContent=t})
+  .catch(()=>{document.getElementById('dynamic-content').textContent='Error'});
+</script>
+</body></html>
